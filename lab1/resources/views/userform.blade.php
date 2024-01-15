@@ -10,66 +10,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
-        <style>
-            body {
-                font-family: 'figtree', sans-serif;
-                background-color: #f0f2f5;
-            }
-
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            form {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-
-            label {
-                font-size: 14px;
-                font-weight: 600;
-                color: #1877f2; /* Facebook blue color */
-            }
-
-            input, select {
-                width: 100%;
-                padding: 10px;
-                margin-top: 5px;
-                margin-bottom: 15px;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-            /* Style for error messages */
-            ul.error-messages {
-                color: red;
-                list-style-type: none;
-                padding: 0;
-            }
-
-            ul.error-messages li {
-                margin: 5px 0;
-            }
-
-            button {
-                background-color: #1877f2; /* Facebook blue color */
-                color: #fff;
-                padding: 10px 15px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-
-            button:hover {
-                background-color: #165499; /* Darker shade for hover effect */
-            }
-        </style>
+        <link href="{{ asset('css/userform.css') }}" rel="stylesheet">
     </head>
 
     <body class="antialiased">
@@ -77,7 +18,7 @@
             <h1>User Info</h1>
             <form action="/userform" method="post">
                 @csrf <!-- Laravel CSRF token -->
-
+    
                 <!-- Display general error messages -->
                 @if($errors->any())
                     <div>
@@ -88,19 +29,19 @@
                         </ul>
                     </div>
                 @endif
-
+    
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username">
-
+    
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email">
-
+    
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
-
+    
                 <label for="password_confirm">Confirm Password:</label>
                 <input type="password" id="password_confirm" name="password_confirm">
-
+    
                 <label for="color">Select Color:</label>
                 <select id="color" name="color">
                     <option value="red">Red</option>
@@ -108,9 +49,34 @@
                     <option value="yellow">Yellow</option>
                     <option value="green">Green</option>
                 </select>
-
+    
+                <div class="captcha">
+                    <div id="captcha-image-container">
+                        {!! Captcha::img() !!}
+                    </div>
+                    <button type="button" class="btn btn-danger" id="refresh-captcha">Refresh</button>
+                    <input type="text" name="captcha" class="form-control" placeholder="Enter Captcha"/>
+                </div>
+                
                 <button type="submit">Submit</button>
             </form>
         </div>
+        <script type="text/javascript">
+            document.getElementById('refresh-captcha').addEventListener('click', function(){
+                fetch('/refresh-captcha')
+                    .then(response => {
+                        if(response.ok) {
+                            return response.text();
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then(data => {
+                        document.getElementById('captcha-image-container').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            });
+        </script>
     </body>
 </html>

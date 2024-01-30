@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
+class ComposerStaticInit53055769cae8767eb288c249d9b61fd0
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -130,7 +130,6 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Prompts\\' => 16,
-            'Laravel\\Breeze\\' => 15,
         ),
         'I' => 
         array (
@@ -355,8 +354,8 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -433,10 +432,6 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
         'Laravel\\Prompts\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/prompts/src',
-        ),
-        'Laravel\\Breeze\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -547,7 +542,6 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\Task' => __DIR__ . '/../..' . '/app/Models/Task.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -2771,12 +2765,6 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
-        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
-        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
-        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
-        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
-        'Laravel\\Breeze\\Console\\InstallsLivewireStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsLivewireStack.php',
         'Laravel\\Prompts\\Concerns\\Colors' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Colors.php',
         'Laravel\\Prompts\\Concerns\\Cursor' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Cursor.php',
         'Laravel\\Prompts\\Concerns\\Erase' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Erase.php',
@@ -6542,9 +6530,9 @@ class ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit6a05bd5c3cb7528a2d0fed76d5a4584f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit53055769cae8767eb288c249d9b61fd0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit53055769cae8767eb288c249d9b61fd0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit53055769cae8767eb288c249d9b61fd0::$classMap;
 
         }, null, ClassLoader::class);
     }
